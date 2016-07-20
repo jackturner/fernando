@@ -1,0 +1,10 @@
+header h1,
+header h2{
+    color:              rgba(255,255,255, .45);
+    }
+
+nav,
+section{
+    display:            block;
+    opacity:            1;
+    }

@@ -1,0 +1,559 @@
+/* --------------------------------------------------
+  SETTING DEFAULT HTML5 BLOCK-LEVEL STATE
+-------------------------------------------------- */
+article,aside,dialog,figure,footer,header,hgroup,menu,nav,section{display:block;}
+
+
+
+/* --------------------------------------------------
+  FONTS
+-------------------------------------------------- */
+@font-face {
+	  font-family:        Garaje;
+	  src:                url('../fonts/garaje.eot');
+	  src:                local('☺'), url('../fonts/garaje.woff') format('woff'), url('../fonts/garaje.ttf') format('truetype'), url('../fonts/garaje.svg#webfont6sSBxrRs') format('svg');
+	  font-weight:        normal;
+	  font-style:         normal;
+    }
+
+
+
+/* --------------------------------------------------
+  GENERAL/REUSABLE
+-------------------------------------------------- */
+body{
+    position:           absolute;
+    margin:             0;
+    width:              100%;
+    height:             100%;
+    overflow:           hidden;
+    color:              #FFF;
+    background-color:   #000;
+    text-rendering:     optimizeLegibility;
+    font-family:        Helvetica, arial, sans-serif;
+    font-size:          12px;
+    line-height:        17px;
+    }
+
+img{
+  	border:             none;
+    }
+
+a{
+    color:              #FFF;
+    text-decoration:    none;
+    outline:            none;
+    }
+    
+
+h1,h2,h3{
+    margin:             0;
+    text-transform:     uppercase;
+    font-family:        Garaje;
+    font-weight:        normal;
+    -webkit-text-stroke:1px transparent;
+    }
+
+h3{
+    position:           absolute;
+    color:              #EEE;
+    font-size:          17px;
+    letter-spacing:     .1em;
+    }
+
+
+
+
+/* --------------------------------------------------
+  HEADER
+-------------------------------------------------- */
+header{
+    display:            none;
+    position:           absolute;
+    z-index:            2;
+    top:                0;
+    left:               0;
+    padding:            5px;
+    }
+
+.homepage header h1,    
+.homepage header a{
+    color:              #A6A6A6;
+    }
+
+.homepage header h1{
+    margin-bottom:      12px;
+    font-size:          27px;
+    line-height:        27px;
+    letter-spacing:     1px;
+    opacity:            .85;
+    }
+
+.homepage header h2{
+    font-size:          16px;
+    line-height:        18px;
+    cursor:             pointer;
+    }
+
+.homepage header h2 a{
+    -webkit-transition: color 200ms ease;
+    -moz-transition:    color 200ms ease;
+    }
+
+.homepage header h2 .active{
+    color:              #FFF;
+    }
+
+.project header h1,
+.project header h2,
+.project header a{
+    color:              rgba(0,0,0, .65);
+    -webkit-transition: color 400ms ease;
+    }
+
+
+.project header h1{
+    font-size:          19px;
+    line-height:        19px;
+    }
+
+.project header h1 a img{
+    margin:             -2px -2px -2px 8px;
+    opacity:            .65;
+    -webkit-transition: opacity 200ms ease-in;
+    -moz-transition:    opacity 200ms ease-in;
+    }
+
+.project header h1 a:hover img{
+    opacity:            1;
+    }
+
+.project header h1 a span{
+    opacity:            0;
+    color:              #FFF;
+    text-shadow:        0 0 4px #000;
+    -webkit-text-stroke:none;
+    -webkit-transition: opacity 200ms ease-in;
+    -moz-transition:    opacity 200ms ease-in;
+    }
+
+.project header h1 a:hover span{
+    opacity:            .8;
+    }
+
+.project header h2{
+    font-size:          27px;
+    line-height:        24px;
+    }
+
+
+
+/* --------------------------------------------------
+  HOMEPAGE NAVIGATION
+-------------------------------------------------- */
+.homepage nav{
+    position:           absolute;
+    width:              101%;
+    height:             101%;
+    }
+
+.homepage nav a,
+.homepage nav span{
+    display:            block;
+    position:           relative;
+    float:              left;
+    color:              #000;
+    }
+
+.homepage nav a{
+    color:              #000;
+    opacity:            0;
+    overflow:           hidden;
+    -webkit-transform:  translateZ(0);
+    }
+
+
+.homepage nav.hiding a{
+    cursor:             default;
+    }
+
+.homepage nav .project{
+    color:              #000;
+    background-size:    cover;
+    background-position:50% 15%;
+    }
+
+.homepage nav .empty{
+    border-top:         4px solid #000;
+    background:         #000 url(../images/empty_cell.gif) 50% 50% repeat;
+    }
+
+.homepage nav .wrapper{
+    position:           absolute;
+    top:                0;
+    right:              0;
+    bottom:             0;
+    left:               0;
+    border-style:       solid;
+    border-color:       #000;
+    border-width:       4px 4px 0 0;
+    }
+
+.homepage nav .project_caption{
+    display:            block;
+    position:           absolute;
+    top:                -45px;
+    left:               0;
+    padding:            0 6px 0 3px;
+    background-color:   #000;
+    text-transform:     uppercase;
+    font-family:        Garaje;
+    font-size:          15px;
+    line-height:        22px;
+    letter-spacing:     .05em;
+    white-space:        nowrap;
+    -webkit-text-stroke:1px transparent;
+    }
+
+
+
+/* --------------------------------------------------
+  ARTIST'S STATEMENT & CONTACT INFO
+-------------------------------------------------- */
+.homepage footer section{
+    display:            none;
+    position:           absolute;
+    top:                200px;
+    left:               50%;
+    margin-left:        -200px;
+    width:              400px;
+    -webkit-text-stroke:1px transparent;
+    }
+
+
+#artists_statement p{
+    margin:             0;
+    text-align:         justify;
+    font-size:          15px;
+    line-height:        20px;
+    }
+
+#artists_statement em{
+    display:            block;
+    color:              #A6A6A6;
+    text-align:         right;
+    font-size:          14px;
+    line-height:        18px;
+    }
+
+#contact_information li{
+    margin-bottom:      8px;
+    list-style:         none;
+    color:              rgba(255,255,255, .85);
+    text-transform:     uppercase;
+    font-family:        Garaje;
+    font-weight:        normal;
+    font-size:          15px;
+    line-height:        18px;
+    -webkit-text-stroke:1px transparent;
+    }
+
+#press_pub li{
+    margin-bottom:      8px;
+    list-style:         none;
+    color:              rgba(255,255,255, .85);
+    text-transform:     uppercase;
+    font-family:        Garaje;
+    font-weight:        normal;
+    font-size:          15px;
+    line-height:        18px;
+    -webkit-text-stroke:1px transparent;
+    }
+
+
+
+
+
+
+/* --------------------------------------------------
+  PROJECT-PAGE NAVIGATION
+-------------------------------------------------- */
+.project nav{
+    display:            none;
+    position:           absolute;
+    z-index:            2;
+    top:                0;
+    right:              0;
+    padding:            4px 0 4px 4px;
+    white-space:        nowrap;
+    background-color:   rgba(0,0,0, .65);
+    -webkit-transition: background-color 400ms ease;
+    -moz-transition:    background-color 400ms ease;
+    -webkit-transform:  translateZ(0);
+    font-size:          0;
+    }
+
+.project nav h3{
+    opacity:            0;
+    bottom:             -2.25em;
+    right:              0;
+    padding:            0 8px 0 10px;
+    height:             2.25em;
+    background-color:   rgba(0,0,0, .65);
+    line-height:        49px;
+    -webkit-transition: all 200ms ease;
+    -moz-transition:    all 200ms ease;
+    }
+
+.project nav a{
+    display:            inline-block;
+    position:           relative;
+    margin-right:       4px;
+    background-color:   #000;
+    vertical-align:     bottom;
+    }
+
+.project nav img{
+    height:             36px;
+    vertical-align:     bottom;
+    }
+
+.project nav a.active{
+    cursor:             default;
+    }
+
+.project nav a.active img{
+    opacity:            .65;
+    }
+
+.project nav a.photo span{
+    display:            none;
+    }
+
+.project nav a.video span{
+    display:            block;
+    position:           absolute;
+    bottom:             0;
+    left:               0;
+    width:              13px;
+    height:             13px;
+    overflow:           hidden;
+    background-image:   url(../images/video.png);
+    text-indent:        -9999px;
+    }
+
+nav .indicator{
+    display:            block;
+    position:           absolute;
+    bottom:             -9px;
+    margin-left:        -9px;
+    width:              0;
+    height:             0;
+    border-color:       rgba(0,0,0, .65) transparent transparent transparent;
+    border-style:       solid;
+    border-width:       9px 9px 0 9px;
+    -webkit-transition: border-top-color 400ms ease;
+    -moz-transition:    border-top-color 400ms ease;
+    }
+
+#next_arrow{
+    cursor:             pointer;
+    opacity:            0;
+    display:            block;
+    position:           absolute;
+    z-index:            2;
+    top:                50%;
+    right:              28px;
+    margin-top:         -33px;
+    width:              48px;
+    height:             66px;
+    background:         transparent url(../images/next_arrow.png) -48px 0 no-repeat;
+    -webkit-transform:  scale(.7);
+    -moz-transform:     scale(.7);
+    -webkit-transition: -webkit-transform 150ms ease;
+    }
+
+#next_arrow:hover{
+    -webkit-transform:  scale(1);
+    }
+
+#next_arrow span{
+    opacity:            1;
+    display:            block;
+    width:              48px;
+    height:             66px;
+    background:         transparent url(../images/next_arrow.png) 0 0 no-repeat;
+    -webkit-transition: opacity 400ms ease;
+    -moz-transition:    opacity 400ms ease;
+    }
+
+
+
+/* --------------------------------------------------
+  SLIDES
+-------------------------------------------------- */
+.project .slide{
+    position:           absolute;
+    top:                50%;
+    -webkit-transform:  translateZ(0);
+    -webkit-transition: -webkit-transform 400ms ease-out;
+    -moz-transition:    -moz-transform 400ms ease-out;
+    }
+
+.project .slide.photo{
+    opacity:            0;
+    }
+
+.project .slide.video{
+    left:               50%;
+    }
+
+.project blockquote{    
+    position:           absolute;
+    right:              0;
+    bottom:             0;
+    margin:             18px;
+    padding:            7px 8px 6px;
+    max-width:          580px;
+    color:              #000;
+    background-color:   #FFF;
+    text-align:         right;
+    font-size:          11px;
+    line-height:        15px;
+    letter-spacing:     1px;
+    -webkit-border-radius:6px;
+    -moz-border-radius:   6px;
+    border-radius:        6px;
+    -webkit-text-stroke:1px transparent;
+    }
+
+.project blockquote .bubble{
+    position:           absolute;
+    background-color:   #FFF;
+    -webkit-border-radius:160px;
+    -moz-border-radius:   160px;
+    border-radius:        160px;
+    }
+
+.project blockquote .bubble_1{
+    -webkit-border-bottom-left-radius:  0;
+    -webkit-border-bottom-right-radius: 0;
+    -moz-border-radius-bottomleft:      0;
+    -moz-border-radius-bottomright:     0;
+    border-bottom-left-radius:          0;
+    border-bottom-right-radius:         0;
+    top:                -10px;
+    right:              36px;
+    width:              20px;
+    height:             10px;
+    }
+
+.project blockquote .bubble_2{
+    top:                -26px;
+    right:              50px;
+    width:              13px;
+    height:             13px;
+    }
+
+.project blockquote .bubble_3{
+    top:                -37px;
+    right:              63px;
+    width:              10px;
+    height:             10px;
+    }
+
+.project blockquote .bubble_4{
+    top:                -43px;
+    right:              76px;
+    width:              6px;
+    height:             6px;
+    }
+
+
+
+/* --------------------------------------------------
+  ABOUT THE PIECE
+-------------------------------------------------- */
+.project section{
+    cursor:             pointer;
+    display:            none;
+    position:           absolute;
+    z-index:            2;
+    bottom:             0;
+    left:               0;
+    padding-bottom:     0;
+    width:              580px;
+    background-color:   rgba(0,0,0, .85);
+    -webkit-transform:  translateZ(0);
+    }
+
+.project section h3{
+    top:                -1.9em;
+    left:               0;
+    padding:            0 14px;
+    height:             1.9em;
+    background-color:   rgba(0,0,0, .85);
+    line-height:        35px;
+    }
+
+.project section p{
+    margin:             12px 14px;
+    font-size:          13px;
+    line-height:        17px;
+    opacity:            .9;
+    }
+
+.project section p.production_notes{
+    margin:             0;
+    padding:            12px 14px 10px;
+    border-top:         1px dashed rgba(255,255,255, .15);
+    font-size:          11px;
+    line-height:        14px;
+    }
+
+
+
+/* --------------------------------------------------
+  STATUS TEXT
+-------------------------------------------------- */
+#status{
+    position:           absolute;
+    z-index:            1;
+    top:                50%;
+    left:               0;
+    margin-top:         -27px;
+    width:              100%;
+    text-align:         center;
+    text-transform:     uppercase;
+    font-family:        Garaje;
+    font-size:          54px;
+    line-height:        54px;
+    }
+
+
+
+/* --------------------------------------------------
+  INVERTED WHITE-ON-BLACK STYLING
+-------------------------------------------------- */
+.invert header h1,    
+.invert header h2,
+.invert header a{
+    color:              rgba(255,255,255, .65);
+    }
+
+.invert nav{
+    background-color:   rgba(255,255,255, .65);
+    }
+
+.invert nav h3{
+    color:              #000;
+    background-color:   rgba(255,255,255, .65);
+    }
+
+.invert .indicator{
+    border-top-color:   rgba(255,255,255, .65);
+    }
+
+.invert #next_arrow span{
+    opacity:            0;
+    }
