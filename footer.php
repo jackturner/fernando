@@ -1,4 +1,5 @@
 <script src="<?php bloginfo("template_url"); ?>/js/libs.js"></script>
+<script src="https://npmcdn.com/flickity@2.0/dist/flickity.pkgd.min.js"></script>
 <script src="<?php bloginfo("template_url"); ?>/js/global.js?07-10-2011"></script>
 <script>
 

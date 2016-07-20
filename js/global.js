@@ -3,6 +3,7 @@ $(function() {
   var bod = $('body')
   var homepage_bod = bod.filter('.homepage')
   var project_bod = bod.filter('.project')
+  var is_mobile = bod.hasClass('mobile')
   var header = $('header')
   var info_box = bod.children('section')
   var info_box_heading = info_box.children('h3')
@@ -38,7 +39,7 @@ $(function() {
   }
 
   var project_entrance_animation = function() {
-    if(!project_bod[0]) return
+    if(!project_bod[0] || is_mobile) return
     
     setTimeout(function() {
       go_to_slide(gallery_links.first())
@@ -257,6 +258,7 @@ $(function() {
   }
 
   var notify_of_resize = function() {
+    if(is_mobile) return
     resize_images()
     if(resize_timer) clearTimeout(resize_timer)
     resize_timer = setTimeout(function() {
@@ -648,7 +650,7 @@ $(function() {
     toggle_homepage_info(this)
   })
   homepage_bod.find('footer section').bind(is_mobile_safari ? 'touchstart' : 'click', function(event) {
-    if(bod.hasClass('mobile')) return
+    // if(bod.hasClass('mobile')) return
     toggle_homepage_info()
   })
   project_links.bind(is_mobile_safari ? 'touchstart' : 'click', function(event) {

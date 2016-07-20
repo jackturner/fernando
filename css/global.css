@@ -121,9 +121,9 @@ a.project {
     color:              transparent;
     }
 
-.project header h1,
-.project header h2,
-.project header a{
+.not_mobile.project header h1,
+.not_mobile.project header h2,
+.not_mobile.project header a{
     color:              rgba(0,0,0, .65);
     -webkit-transition: color 400ms ease;
     }
@@ -232,8 +232,16 @@ a.project {
     display:            block;
     position:           relative;
     height:             200px;
+    background-size:    cover;
+    background-repeat:  no-repeat;
+    background-position:50% 50%;
     }
 
+@media screen and (min-width: 620px) {
+.mobile.homepage nav .project{
+    height:             400px;
+    }
+}
 
 /* --------------------------------------------------
   ARTIST'S STATEMENT & CONTACT INFO
@@ -390,6 +398,10 @@ nav .indicator{
     -webkit-transition: -webkit-transform 150ms ease;
     }
 
+.mobile .arrow{
+    display:            none;
+    }
+
 .arrow:hover{
     -webkit-transform:  scale(1);
     }
@@ -510,7 +522,7 @@ nav .indicator{
 /* --------------------------------------------------
   ABOUT THE PIECE
 -------------------------------------------------- */
-.project section{
+.not_mobile.project section{
     cursor:             pointer;
     display:            none;
     position:           absolute;
@@ -523,7 +535,11 @@ nav .indicator{
     -webkit-transform:  translateZ(0);
     }
 
-.project section h3{
+.mobile.project section{
+    padding-top:        32px;
+    }
+
+.not_mobile.project section h3{
     top:                -1.9em;
     left:               0;
     padding:            0 14px;
@@ -531,6 +547,10 @@ nav .indicator{
     background-color:   rgba(0,0,0, .85);
     line-height:        35px;
     white-space:        nowrap;
+    }
+
+.mobile.project section h3 {
+    display:            none;
     }
 
 .project section p{
@@ -568,6 +588,17 @@ nav .indicator{
     }
 
 
+/* --------------------------------------------------
+  FLICKITY STYLING
+-------------------------------------------------- */
+.carousel .flickity-page-dots .dot{
+    opacity:            0.35;
+    background:         #6D6D6D;
+    }
+
+.flickity-viewport {
+    transition:         height 0.35s;
+    }
 
 /* --------------------------------------------------
   INVERTED WHITE-ON-BLACK STYLING

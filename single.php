@@ -2,9 +2,29 @@
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
 <header>
-  <h1><a href="<?php bloginfo('home'); ?>/"><?php bloginfo('name'); ?> <img src="<?php bloginfo("template_url"); ?>/images/home.png" /> <span>Return home</span></a></h1>
+  <h1><a href="<?php bloginfo('home'); ?>/"><?php bloginfo('name'); ?> <img src="<?php bloginfo("template_url"); ?>/images/home.png" /><?php if(!is_mobile()) { ?> <span>Return home</span><?php } ?></a></h1>
   <h2><?php the_title(); ?></h2>
 </header>
+
+<?php if(is_mobile()) { ?>
+
+<div class="carousel" data-flickity='{"lazyLoad": true, "prevNextButtons": false, "adaptiveHeight": true}'>
+
+  <?php foreach (photos_in_project($post->ID) as $photo) {
+          if( get_post_meta($post->ID, 'featured_image_visbility', true) == 'Include in gallery' ||
+              get_post_thumbnail_id($post->ID) != $photo->ID) {
+
+            $full = wp_get_attachment_image_src($photo->ID, 'large');
+             ?>
+
+  <img class="carousel-cell" data-flickity-lazyload="<?php echo $full[0]; ?>" width="100%" />
+
+  <?php   }
+        } ?>
+
+</div>
+
+<?php } else { ?>
 
 <nav class="slides">
   <h3>Gallery</h3>
@@ -55,7 +75,10 @@
         } ?>
 </nav>
 
+<?php } ?>
+
 <?php if (get_the_content() or !empty($year) or !empty($notes)) { ?>
+
   <section>
     <h3>About The Work</h3>
     <?php the_content();
