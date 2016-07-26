@@ -110,9 +110,9 @@ $(function() {
           .animate({opacity: .85}, 400, function() {
             this_caption.stop().animate({top: 4}, 200, 'easeInOutCubic', function() {
 
-              num_images_loaded++
-              if(num_images_loaded + 1 == project_captions.length)
-                grid_cells.hover(grid_cell_hover)
+              // num_images_loaded++
+              // if(num_images_loaded + 1 == project_captions.length)
+              //   grid_cells.hover(grid_cell_hover)
 
             })          
           })
@@ -653,17 +653,17 @@ $(function() {
     // if(bod.hasClass('mobile')) return
     toggle_homepage_info()
   })
-  project_links.bind(is_mobile_safari ? 'touchstart' : 'click', function(event) {
-    if(bod.hasClass('mobile')) return
-    event.preventDefault()
-    if($(this).attr('href') != undefined) go_to_project(this)
-  })
+  // project_links.bind(is_mobile_safari ? 'touchstart' : 'click', function(event) {
+  //   if(bod.hasClass('mobile')) return
+  //   event.preventDefault()
+  //   if($(this).attr('href') != undefined) go_to_project(this)
+  // })
   
   // GALLERY SPECIFIC EVENTS
-  project_bod.find('header h1 a').bind(is_mobile_safari ? 'touchstart' : 'click', function(event) {
-    event.preventDefault()
-    go_to_homepage()
-  })
+  // project_bod.find('header h1 a').bind(is_mobile_safari ? 'touchstart' : 'click', function(event) {
+  //   event.preventDefault()
+  //   go_to_homepage()
+  // })
   gallery_nav.mousemove(show_nav)
   project_bod.bind(is_mobile_safari ? 'touchstart' : 'click', hide_info)
   gallery_links.bind(is_mobile_safari ? 'touchstart' : 'click', function(event) {
