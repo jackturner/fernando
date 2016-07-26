@@ -234,7 +234,8 @@ a.project {
     height:             200px;
     background-size:    cover;
     background-repeat:  no-repeat;
-    background-position:50% 50%;
+    background-position:50% 15%;
+    border-top:         4px solid #000;
     }
 
 @media screen and (min-width: 620px) {
@@ -535,10 +536,6 @@ nav .indicator{
     -webkit-transform:  translateZ(0);
     }
 
-.mobile.project section{
-    padding-top:        32px;
-    }
-
 .not_mobile.project section h3{
     top:                -1.9em;
     left:               0;
@@ -598,6 +595,16 @@ nav .indicator{
 
 .flickity-viewport {
     transition:         height 0.35s;
+    }
+
+ol.flickity-page-dots {
+    position: initial;
+    margin: 8px;
+    width: initial;
+    }
+
+ol.flickity-page-dots .dot {
+    margin: 6px 8px;
     }
 
 /* --------------------------------------------------
