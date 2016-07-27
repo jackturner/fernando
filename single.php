@@ -15,11 +15,35 @@
               get_post_thumbnail_id($post->ID) != $photo->ID) {
 
             $full = wp_get_attachment_image_src($photo->ID, 'large');
+            $original = wp_get_attachment_image_src($photo->ID, 'original');
              ?>
-
-  <img class="carousel-cell" data-flickity-lazyload="<?php echo $full[0]; ?>" width="100%" />
+<a href="<?php echo $original[0]; ?>" class="carousel-cell">
+  <img src="<?php echo $full[0]; ?>" width="100%" />
+</a>
 
   <?php   }
+        } ?>
+
+<?php setup_postdata($post);
+        $video_urls = split("\n", trim(get_post_meta($post->ID, 'vimeo_urls', true)));
+        $thumbnails_pairs = split("\n\n", get_post_meta($post->ID, 'vimeo_thumb_urls', true));
+        $thumbnails = array();
+        foreach ($thumbnails_pairs as $pair)
+          $thumbnails[(int)reset(split("\n", $pair))] = end(split("\n", $pair));
+        if ($video_urls) {
+          foreach ($video_urls as $video_url) {
+            $video_id = (int)end(split("/", $video_url));
+            $thumbnail = $thumbnails[$video_id];
+            $thumbnails_parts = explode("_", $thumbnail);
+            $big_thumb = $thumbnails_parts[0].".jpg";
+            if (!empty($video_url) and !empty($thumbnail)) { ?>
+            
+              <a href="<?php echo $video_url; ?>" class="carousel-cell">
+                <img src="<?php echo $big_thumb; ?>" width="100%" />
+                <span>Play this video</span>
+              </a>
+  <?php     }
+          }
         } ?>
 
 </div>
@@ -64,6 +88,9 @@
           foreach ($video_urls as $video_url) {
             $video_id = (int)end(split("/", $video_url));
             $thumbnail = $thumbnails[$video_id];
+            $thumbnails_parts = explode("_", $thumbnail);
+            $thumbnail = $thumbnails_parts[0]."_108x72.jpg";
+
             if (!empty($video_url) and !empty($thumbnail)) { ?>
             
         	    <a href="<?php echo $video_url; ?>" rel="video" class="video">

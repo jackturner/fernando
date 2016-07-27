@@ -588,6 +588,10 @@ nav .indicator{
 /* --------------------------------------------------
   FLICKITY STYLING
 -------------------------------------------------- */
+.carousel {
+
+}
+
 .carousel .flickity-page-dots .dot{
     opacity:            0.35;
     background:         #6D6D6D;
@@ -595,6 +599,23 @@ nav .indicator{
 
 .flickity-viewport {
     transition:         height 0.35s;
+    }
+
+a.carousel-cell {
+    display: block;
+    width: 100%;
+}
+
+.carousel-cell span{
+    display:            block;
+    position:           absolute;
+    bottom:             12px;
+    left:               6px;
+    width:              13px;
+    height:             13px;
+    overflow:           hidden;
+    background-image:   url(../images/video.png);
+    text-indent:        -9999px;
     }
 
 ol.flickity-page-dots {
