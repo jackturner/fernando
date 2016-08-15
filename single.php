@@ -18,7 +18,8 @@
             $original = wp_get_attachment_image_src($photo->ID, 'original');
              ?>
 <a href="<?php echo $original[0]; ?>" class="carousel-cell">
-  <img src="<?php echo $full[0]; ?>" width="100%" />
+  <img data-flickity-lazyload="<?php echo $full[0]; ?>" width="100%" />
+  <?php if(!empty($photo->post_excerpt)) : ?><span><?php echo $photo->post_excerpt; ?></span><?php endif; ?>
 </a>
 
   <?php   }
