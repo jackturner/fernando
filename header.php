@@ -15,7 +15,7 @@
   <link rel="shortcut icon" href="<?php bloginfo("template_url"); ?>/favicon.ico" />
   <link rel="apple-touch-icon" href="<?php bloginfo("template_url"); ?>/images/apple_touch_icon.png" />
   <link rel="alternate" type="application/rss+xml" href="<?php bloginfo("rss2_url"); ?>" />
-  <link rel="stylesheet" href="<?php bloginfo("template_url"); ?>/css/global.css?07-26-2016" />
+  <link rel="stylesheet" href="<?php bloginfo("template_url"); ?>/css/global.css?08-15-2016" />
   <link rel="stylesheet" href="https://npmcdn.com/flickity@2.0/dist/flickity.css" media="screen">
   <noscript>
     <link rel="stylesheet" href="<?php bloginfo("template_url"); ?>/css/noscript.css" />
