@@ -589,7 +589,6 @@ nav .indicator{
   FLICKITY STYLING
 -------------------------------------------------- */
 .carousel {
-
 }
 
 .carousel .flickity-page-dots .dot{
@@ -604,19 +603,33 @@ nav .indicator{
 a.carousel-cell {
     display: block;
     width: 100%;
+    text-align: center;
 }
 
-.carousel-cell span{
+.carousel-cell img {
+    max-height:         300px;
+    max-width:          100%;
+    }
+
+.carousel-cell span.video{
     display:            block;
     position:           absolute;
-    bottom:             12px;
-    left:               6px;
-    width:              13px;
-    height:             13px;
+    top:                50%;
+    left:               50%;
+    margin:             -50px 0 0 -50px;
+    width:              100px;
+    height:             100px;
     overflow:           hidden;
-    background-image:   url(../images/video.png);
+    background-image:   url(../images/play_overlay.png);
+    background-repeat:  no-repeat;
+    background-position:50% 50%;
+    background-size:    contain;
     text-indent:        -9999px;
     }
+
+.carousel-cell .caption {
+    display: block;
+}
 
 ol.flickity-page-dots {
     position: initial;

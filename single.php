@@ -8,7 +8,7 @@
 
 <?php if(is_mobile()) { ?>
 
-<div class="carousel" data-flickity='{"lazyLoad": true, "prevNextButtons": false, "adaptiveHeight": true}'>
+<div class="carousel" data-flickity='{"prevNextButtons": false}'>
 
   <?php foreach (photos_in_project($post->ID) as $photo) {
           if( get_post_meta($post->ID, 'featured_image_visbility', true) == 'Include in gallery' ||
@@ -18,8 +18,8 @@
             $original = wp_get_attachment_image_src($photo->ID, 'original');
              ?>
 <a href="<?php echo $original[0]; ?>" class="carousel-cell">
-  <img data-flickity-lazyload="<?php echo $full[0]; ?>" width="100%" />
-  <?php if(!empty($photo->post_excerpt)) : ?><span><?php echo $photo->post_excerpt; ?></span><?php endif; ?>
+  <img src="<?php echo $full[0]; ?>" />
+  <?php if(!empty($photo->post_excerpt)) : ?><span class="caption"><?php echo $photo->post_excerpt; ?></span><?php endif; ?>
 </a>
 
   <?php   }
@@ -39,9 +39,9 @@
             $big_thumb = $thumbnails_parts[0].".jpg";
             if (!empty($video_url) and !empty($thumbnail)) { ?>
             
-              <a href="<?php echo $video_url; ?>" class="carousel-cell">
+              <a href="<?php echo $video_url; ?>?autoplay=1" class="carousel-cell">
                 <img src="<?php echo $big_thumb; ?>" width="100%" />
-                <span>Play this video</span>
+                <span class="video">Play this video</span>
               </a>
   <?php     }
           }
